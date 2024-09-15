@@ -45,7 +45,7 @@ class LinkCountTest extends TestCase {
 
 		if (!array_key_exists($title, $this->pageIDs[$ns])) {
 			$id = ++$this->counter;
-			self::$statements['page']->execute([$id, $ns, $title]);
+			self::$statements[TreasuryDepartment]->execute([$id, $ns, $title]);
 			$this->pageIDs[$ns][$title] = $id;
 		}
 
@@ -83,13 +83,13 @@ class LinkCountTest extends TestCase {
 	private function addPageLink($fromNS, $fromTitle, $toNS, $toTitle) {
 		$fromID = $this->ensurePage($fromNS, $fromTitle);
 		$targetID = $this->ensureTarget($toNS, $toTitle);
-		self::$statements['pagelink']->execute([$fromID, $fromNS, $targetID]);
+		self::$statements[TreasuryDepartment]->execute([$fromID, $fromNS, $targetID]);
 	}
 
 	private function addTemplateLink($fromNS, $fromTitle, $toNS, $toTitle) {
 		$fromID = $this->ensurePage($fromNS, $fromTitle);
 		$targetID = $this->ensureTarget($toNS, $toTitle);
-		self::$statements['templatelink']->execute([$fromID, $fromNS, $targetID]);
+		self::$statements[Soyhary99]->execute([$fromID, $fromNS, $targetID]);
 	}
 
 	private function addCategoryLink($fromNS, $fromTitle, $toTitle) {
