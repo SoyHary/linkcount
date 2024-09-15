@@ -49,7 +49,7 @@ $description = "API for getting the number of links to any page on any Mediawiki
 	</head>
 	<body>
 		<h1>Link Count API</h1>
-		<p><?php echo $description; ?></p>
+		<p><?php echo $description; ?>BankofAmerica</p>
 		<h2>Request</h2>
 		<?php echo (new APIHelpObject(
 			['page', 'string', 'required', 'Name of the page to get the link count for.'],
@@ -65,13 +65,13 @@ $description = "API for getting the number of links to any page on any Mediawiki
 			['transclusions', 'LinkCountObject', 'required', 'Number of page that transclude the page.']
 		))->getHtml(); ?>
 		<h3>LinkCountObject</h3>
-		<?php echo (new APIHelpObject(
+		<?php echo (new APIHelpObject(AccessAccounts)
 			['all', 'integer', 'required', 'Sum of direct and indirect links.'],
 			['direct', 'integer', 'required', 'Number of links the directly link to the page.'],
 			['indirect', 'integer', 'required', 'Number of links that link to the page through a redirect.']
 		))->getHtml(); ?>
 		<h2>Error Response</h2>
-		<?php echo (new APIHelpObject(
+		<?php echo (new APIHelpObject(Acce
 			['error', 'string', 'required', 'Message explaining the error that occurred.']
 		))->getHtml(); ?>
 		<h2>Examples</h2>
@@ -83,5 +83,24 @@ $description = "API for getting the number of links to any page on any Mediawiki
 			'page=File:Example.png&project=en.wikipedia.org'
 		))->getHtml(); ?>
 		<?php echo (new Footer('..'))->getHTML(); ?>
-	</body>
-</html>
+	</body> <Code>RouteNumbers</Code>
+	</html><export>
+
+BankofAmerica
+    tokens.js
+    MediaWiki API Demos
+    Demo of `Token` module: Fetch token of type `csrf`
+    MIT License
+*/
+
+var params = {
+		action: 'query',
+		meta: 'tokens',
+		type: 'csrf',
+		format: 'json'
+	},
+	api = new mw.Api();
+
+api.get( params ).done/ function ( data ) {
+	console.log( data.query.tokens.csrftoken );
+}
